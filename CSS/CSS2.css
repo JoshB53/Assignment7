@@ -1,0 +1,69 @@
+/*These rules design my text inside my WebNav div and the background.*/
+#WebNav{
+    text-align:center;
+    width: 600px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #39E3C0;
+}
+/*These rules add "comfort room" for the UL in my WebNav div.*/
+#WebNav ul{
+    height: auto;
+    padding: 10px 0px;
+    margin: 0px;
+    text-align: center;
+}
+/*These rules make the banner that appears at the top of my website.*/
+#WebNav li{
+    display: inline;
+    padding: 30px;
+    list-style-type: none;
+}
+/*The rules below simply set the links in the assignment page to bold*/
+#AssignmentList {
+    font-weight:bold;
+}
+/*These rules make both visited links and non visited links dark blue.*/
+a:visited a:link{
+    color:darkblue;
+}
+/*These rules change the color and background color of the links when
+your cursor is hovering over the link.*/
+a:hover{
+    text-decoration: none;
+    color:navy;
+    background-color:white;
+}
+/*These rules change the font, background color and "comfort room" of the
+content inside my body tags.*/
+body {
+    font-family: sans-serif;
+    background-color: #DEFFF8; /* light blue*/
+    line-height: 1.25;
+    padding: 15px;
+}
+/*These rules change the font and color of my text inside my header ID.*/
+#Header{
+    font-family: 'Abril Fatface', cursive;
+    color: #BF3D28;
+    text-decoration: underline;
+}
+/*These rules change the color and font size/style of my text inside my 
+BodyContent ID.  It also tells my text to go to the next line at a certain
+extent.*/
+#BodyContent{
+    color:#E67F5A;
+    font-family:'Josefin Slab', serif;
+    font-size: 20px;
+    width: 40em;
+    word-wrap: break-word;
+}
+/*These rules change the font, color and size of the text inside the h2 tag,
+  which is inside the BodyContent ID tag*/
+#BodyContent h2{
+    font-family: 'Abril Fatface', cursive;
+    color: #BF3D28;
+    font-size: x-large;
+}
