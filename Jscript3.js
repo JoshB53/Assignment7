@@ -1,7 +1,6 @@
-// This script implements simple routing by loading partial HTML files 
-// named corresponding to fragment identifiers.
-//
-// By Curran Kelleher October 2014
+//This is my javascript for assignment 7.  
+//Most javascript was coded by Curran(Thanks), 
+//Simple variable names were changed, along with some ID locators
 
 // Wrap everything in an immediately invoked function expression,
 // so no global variables are introduced.
@@ -10,24 +9,24 @@
   // Stores the cached partial HTML pages.
   // Keys correspond to fragment identifiers.
   // Values are the text content of each loaded partial HTML file.
-  var partialsCache = {};
+  var pC = {};
 
   // Gets the appropriate content for the given fragment identifier.
   // This function implements a simple cache.
-  function getContent(fragmentId, callback){
+  function getContent(fId, callback){
 
     // If the page has been fetched before,
-    if(partialsCache[fragmentId]) {
+    if(pC[fId]) {
 
       // pass the previously fetched content to the callback.
-      callback(partialsCache[fragmentId]);
+      callback(pC[fId]);
 
     } else {
       // If the page has not been fetched before, fetch it.
-      $.get(fragmentId + ".html", function (content) {
+      $.get(fId + ".html", function (content) {
 
         // Store the fetched content in the cache.
-        partialsCache[fragmentId] = content;
+        pC[fId] = content;
 
         // Pass the newly fetched content to the callback.
         callback(content);
@@ -36,11 +35,11 @@
   }
 
   // Sets the "active" class on the active navigation link.
-  function setActiveLink(fragmentId){
+  function setActiveLink(fId){
     $("#WebNav a").each(function (i, linkElement) {
       var link = $(linkElement),
           pageName = link.attr("href").substr(1);
-      if(pageName === fragmentId) {
+      if(pageName === fId) {
         link.attr("class", "active");
       } else {
         link.removeAttr("class");
@@ -53,15 +52,15 @@
 
     // Isolate the fragment identifier using substr.
     // This gets rid of the "#" character.
-    var fragmentId = location.hash.substr(1);
+    var fId = location.hash.substr(1);
 
     // Set the "content" div innerHTML based on the fragment identifier.
-    getContent(fragmentId, function (content) {
+    getContent(fId, function (content) {
       $("#content").html(content);
     });
 
     // Toggle the "active" class on the link currently navigated to.
-    setActiveLink(fragmentId);
+    setActiveLink(fId);
   }
 
   // If no fragment identifier is provided,
